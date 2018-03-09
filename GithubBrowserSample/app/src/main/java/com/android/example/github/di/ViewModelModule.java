@@ -12,6 +12,10 @@ import dagger.Binds;
 import dagger.Module;
 import dagger.multibindings.IntoMap;
 
+/**
+ * 生成一个以ViewModel类为key，ViewModel实例为value的Map。用到对应类的时候就通过这里创建。
+ * 这个Map是给ViewModelProvider.Factory用的。具体用法见{@link com.android.example.github.ui.search.SearchFragment}。
+ */
 @Module
 abstract class ViewModelModule {
     @Binds

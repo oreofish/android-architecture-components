@@ -28,6 +28,11 @@ import javax.inject.Inject;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 
+/**
+ * 实现HasSupportFragmentInjector.supportFragmentInjector()，用到的fragments做注入时会用到。
+ * <p>
+ * 其他的变量，直接@Inject就行了。
+ */
 public class MainActivity extends AppCompatActivity implements HasSupportFragmentInjector {
     @Inject
     DispatchingAndroidInjector<Fragment> dispatchingAndroidInjector;
@@ -43,6 +48,11 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
         }
     }
 
+    /**
+     * Dagger2依赖注入：
+     * 将Fragment的实例提供给注入器使用。
+     * 每个Activity有多个Fragment，在Fragment中调用AndroidSupportInjection.inject(Fragment f)时会用到
+     */
     @Override
     public DispatchingAndroidInjector<Fragment> supportFragmentInjector() {
         return dispatchingAndroidInjector;

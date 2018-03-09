@@ -32,6 +32,13 @@ import dagger.Provides;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * app全局对象在这里初始化，如retrofit、db、SharedPrefs等。这里包装了所有创建的细节，如参数和依赖关系等。
+ * 每个@Provides能够提供对应类的实例，它们需要的参数也由注入器提供，如provideDb(app)。
+ * @Singleton 对应的类，全app共用一个实例。
+ * <p>
+ * 这个Module继承自ViewModelModule，包含了ViewModelModule的所有内容。
+ */
 @Module(includes = ViewModelModule.class)
 class AppModule {
     @Singleton @Provides

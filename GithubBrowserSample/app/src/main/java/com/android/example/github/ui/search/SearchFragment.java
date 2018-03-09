@@ -46,6 +46,9 @@ import android.view.inputmethod.InputMethodManager;
 
 import javax.inject.Inject;
 
+/**
+ * Injectable只是一个标记，表示此fragment需要做依赖注入。
+ */
 public class SearchFragment extends Fragment implements Injectable {
 
     @Inject

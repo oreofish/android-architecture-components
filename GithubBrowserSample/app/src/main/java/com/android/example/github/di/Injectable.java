@@ -18,6 +18,7 @@ package com.android.example.github.di;
 
 /**
  * Marks an activity / fragment injectable.
+ * 标记出activity、fragment需要注入
  */
 public interface Injectable {
 }

@@ -31,6 +31,16 @@ import dagger.android.support.HasSupportFragmentInjector;
 
 /**
  * Helper class to automatically inject fragments if they implement {@link Injectable}.
+ * 辅助类，用于对实现了{@link Injectable}的Fragment自动进行注入。
+ * <p>
+ * AppInjector.init()在Application.onCreate()中调用，它做了三件事：
+ * 1. 将app的实例提供给注入器：DaggerAppComponent...inject(githubApp);
+ * 2. 给app的每个Activity挂回调，创建时将自身提供给注入器：AndroidInjection.inject(activity);
+ * 3. 给acitvity的每个fragment挂回调，创建时将自身提供给注入器：AndroidSupportInjection.inject(f);
+ * 这一系列操作将Android四大件的对象提供给注入器，注入器给其中的@Inject变量赋值。
+ * 并且这个过程是自动的，工程中所有的activity和fragment都不用再操心这个事情了，只管愉快的@Inject
+ * <p>
+ * 查看依赖注入详情，请看{@link AppComponent}。
  */
 public class AppInjector {
     private AppInjector() {}

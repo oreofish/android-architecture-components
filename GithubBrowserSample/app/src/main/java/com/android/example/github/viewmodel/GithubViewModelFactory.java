@@ -25,6 +25,9 @@ import javax.inject.Inject;
 import javax.inject.Provider;
 import javax.inject.Singleton;
 
+/**
+ * 这个文件应该放到di目录里去。它是ViewModel的工厂类。
+ */
 @Singleton
 public class GithubViewModelFactory implements ViewModelProvider.Factory {
     private final Map<Class<? extends ViewModel>, Provider<ViewModel>> creators;

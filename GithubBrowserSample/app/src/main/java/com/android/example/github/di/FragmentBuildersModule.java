@@ -23,6 +23,9 @@ import com.android.example.github.ui.user.UserFragment;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
+/**
+ * 提供Fragment实例给注入器的module
+ */
 @Module
 public abstract class FragmentBuildersModule {
     @ContributesAndroidInjector

@@ -21,6 +21,10 @@ import com.android.example.github.MainActivity;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
+/**
+ * 提供Activity实例给注入器的module。
+ * 并且用到了FragmentBuildersModule来提供fragemnt的实例。
+ */
 @Module
 public abstract class MainActivityModule {
     @ContributesAndroidInjector(modules = FragmentBuildersModule.class)

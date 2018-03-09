@@ -10,6 +10,10 @@ import java.lang.annotation.Target;
 
 import dagger.MapKey;
 
+/**
+ * 自定义一个新的注释@ViewModelKey。
+ * 用来标记Map的key
+ */
 @Documented
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
